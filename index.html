@@ -7,342 +7,356 @@
 <title>Ürün Avcısı</title>
 
 <style>
+* {
+    box-sizing: border-box;
+}
 
 body {
-    margin:0;
+    margin: 0;
     font-family: Arial, sans-serif;
-    background:#f2f4f7;
+    background: #f2f4f7;
+    color: #1f2937;
 }
 
 header {
-    background:#111827;
-    color:white;
-    padding:25px;
-    text-align:center;
+    background: #111827;
+    color: white;
+    padding: 28px 20px;
+    text-align: center;
 }
 
 header h1 {
-    margin:0;
-    font-size:32px;
+    margin: 0;
+    font-size: 32px;
 }
 
 header p {
-    margin-top:10px;
-    color:#d1d5db;
+    margin: 10px 0 0;
+    color: #d1d5db;
 }
-
 
 .container {
-    max-width:900px;
-    margin:30px auto;
-    padding:20px;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
 }
-
 
 .panel {
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.08);
 }
-
 
 .grid {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 15px;
 }
 
-
-input, select {
-    width:100%;
-    padding:12px;
-    border:1px solid #ddd;
-    border-radius:8px;
+label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
 }
 
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 15px;
+}
 
 button {
-
-    width:100%;
-    margin-top:20px;
-    padding:14px;
-
-    background:#2563eb;
-    color:white;
-
-    border:none;
-    border-radius:10px;
-
-    font-size:16px;
-    cursor:pointer;
-
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
 }
-
 
 button:hover {
-    background:#1d4ed8;
+    background: #1d4ed8;
 }
 
+#sonuclar {
+    margin-top: 25px;
+}
 
+.sonuc-bilgisi {
+    background: #dbeafe;
+    padding: 13px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
 
 .product {
-
-    margin-top:25px;
-    background:white;
-
-    padding:20px;
-
-    border-radius:15px;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
-
+    margin-bottom: 18px;
+    background: white;
+    padding: 22px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.08);
 }
-
-
 
 .product h3 {
-    margin-top:0;
+    margin-top: 0;
+    margin-bottom: 14px;
 }
-
 
 .tag {
-
-    display:inline-block;
-
-    background:#e0f2fe;
-
-    padding:6px 10px;
-
-    border-radius:20px;
-
-    margin-right:5px;
-
-    font-size:13px;
-
+    display: inline-block;
+    background: #e0f2fe;
+    padding: 6px 10px;
+    border-radius: 20px;
+    margin: 0 5px 7px 0;
+    font-size: 13px;
 }
-
-
 
 .amazon {
-
-    display:block;
-
-    margin-top:15px;
-
-    text-align:center;
-
-    background:#ff9900;
-
-    color:white;
-
-    padding:12px;
-
-    border-radius:8px;
-
-    text-decoration:none;
-
+    display: block;
+    margin-top: 15px;
+    text-align: center;
+    background: #ff9900;
+    color: #111827;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
+.amazon:hover {
+    background: #e88b00;
+}
 
+.uyari {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,.08);
+}
 </style>
-
 </head>
-
 
 <body>
 
-
 <header>
-
-<h1>🚀 Ürün Avcısı</h1>
-
-<p>Kârlı ürünleri daha hızlı bul</p>
-
+    <h1>🕵️ Ürün Avcısı</h1>
+    <p>Amazon Türkiye ürün araştırma paneli</p>
 </header>
-
-
 
 <div class="container">
 
+    <div class="panel">
+        <h2>🔍 Ürün Ara</h2>
 
-<div class="panel">
+        <div class="grid">
 
+            <div>
+                <label for="kategori">Kategori</label>
+                <select id="kategori">
+                    <option value="tumu">Tüm kategoriler</option>
+                    <option value="Kozmetik">Kozmetik</option>
+                    <option value="Kişisel Bakım">Kişisel Bakım</option>
+                    <option value="Elektronik">Elektronik</option>
+                    <option value="Ev Yaşam">Ev Yaşam</option>
+                </select>
+            </div>
 
-<h2>🔍 Ürün Ara</h2>
+            <div>
+                <label for="minFiyat">Minimum fiyat</label>
+                <input
+                    id="minFiyat"
+                    type="number"
+                    min="0"
+                    placeholder="Örnek: 250"
+                >
+            </div>
 
+            <div>
+                <label for="maxFiyat">Maksimum fiyat</label>
+                <input
+                    id="maxFiyat"
+                    type="number"
+                    min="0"
+                    placeholder="Örnek: 1000"
+                >
+            </div>
 
-<div class="grid">
+            <div>
+                <label for="minYorum">Minimum yorum</label>
+                <input
+                    id="minYorum"
+                    type="number"
+                    min="0"
+                    placeholder="Örnek: 200"
+                >
+            </div>
 
+            <div>
+                <label for="marka">Marka</label>
+                <input
+                    id="marka"
+                    type="text"
+                    placeholder="Örnek: Bioderma"
+                >
+            </div>
 
-<div>
+        </div>
 
-<label>Kategori</label>
+        <button type="button" onclick="urunAra()">🔎 ARA</button>
+    </div>
 
-<select>
-
-<option>Kozmetik</option>
-
-<option>Kişisel Bakım</option>
-
-<option>Elektronik</option>
-
-<option>Ev Yaşam</option>
-
-</select>
-
-</div>
-
-
-
-<div>
-
-<label>Minimum Fiyat</label>
-
-<input placeholder="250 TL">
-
-</div>
-
-
-<div>
-
-<label>Maksimum Fiyat</label>
-
-<input placeholder="1000 TL">
-
-</div>
-
-
-<div>
-
-<label>Minimum Yorum</label>
-
-<input placeholder="200">
-
-</div>
-
-
-
-</div>
-
-
-<button onclick="urunAra()">🔎 ARA</button>
-
+    <div id="sonuclar"></div>
 
 </div>
-
-
-
-
-<div class="product">
-
-
-<h3>Örnek Ürün</h3>
-
-
-<span class="tag">⭐ 4.8 Puan</span>
-
-<span class="tag">💬 1250 Yorum</span>
-
-
-<p>💰 Fiyat: 799 TL</p>
-
-
-<a class="amazon" href="#" target="_blank">
-
-Amazon'da Aç
-
-</a>
-
-
-</div>
-
-
-
-</div>
-
 
 <script>
-
-function urunAra(){
-
-let urunler = [
-
-{
-ad:"Bioderma Atoderm Creme Ultra 500 ml",
-puan:"4.8",
-yorum:"1250",
-fiyat:"799 TL",
-link:"https://www.amazon.com.tr/"
-},
-
-{
-ad:"CeraVe Nemlendirici Krem",
-puan:"4.7",
-yorum:"980",
-fiyat:"650 TL",
-link:"https://www.amazon.com.tr/"
-},
-
-{
-ad:"Vichy Mineral 89 Serum",
-puan:"4.9",
-yorum:"560",
-fiyat:"950 TL",
-link:"https://www.amazon.com.tr/"
-}
-
+const urunler = [
+    {
+        ad: "Bioderma Atoderm Creme Ultra 500 ml",
+        kategori: "Kozmetik",
+        marka: "Bioderma",
+        puan: 4.8,
+        yorum: 1250,
+        fiyat: 799,
+        link: "https://www.amazon.com.tr/s?k=Bioderma+Atoderm+Creme+Ultra+500+ml"
+    },
+    {
+        ad: "CeraVe Nemlendirici Krem",
+        kategori: "Kozmetik",
+        marka: "CeraVe",
+        puan: 4.7,
+        yorum: 980,
+        fiyat: 650,
+        link: "https://www.amazon.com.tr/s?k=CeraVe+Nemlendirici+Krem"
+    },
+    {
+        ad: "Vichy Mineral 89 Serum",
+        kategori: "Kozmetik",
+        marka: "Vichy",
+        puan: 4.9,
+        yorum: 560,
+        fiyat: 950,
+        link: "https://www.amazon.com.tr/s?k=Vichy+Mineral+89+Serum"
+    },
+    {
+        ad: "Nivea Men Duş Jeli",
+        kategori: "Kişisel Bakım",
+        marka: "Nivea",
+        puan: 4.6,
+        yorum: 310,
+        fiyat: 220,
+        link: "https://www.amazon.com.tr/s?k=Nivea+Men+Duş+Jeli"
+    },
+    {
+        ad: "Kablosuz Bluetooth Kulaklık",
+        kategori: "Elektronik",
+        marka: "Anker",
+        puan: 4.5,
+        yorum: 2100,
+        fiyat: 1450,
+        link: "https://www.amazon.com.tr/s?k=Anker+Bluetooth+Kulaklık"
+    },
+    {
+        ad: "Mikrofiber Temizlik Bezi Seti",
+        kategori: "Ev Yaşam",
+        marka: "Vileda",
+        puan: 4.6,
+        yorum: 740,
+        fiyat: 340,
+        link: "https://www.amazon.com.tr/s?k=Vileda+Mikrofiber+Temizlik+Bezi"
+    }
 ];
 
+function urunAra() {
+    const kategori = document.getElementById("kategori").value;
+    const minFiyatDegeri = document.getElementById("minFiyat").value;
+    const maxFiyatDegeri = document.getElementById("maxFiyat").value;
+    const minYorumDegeri = document.getElementById("minYorum").value;
+    const marka = document
+        .getElementById("marka")
+        .value
+        .trim()
+        .toLocaleLowerCase("tr-TR");
 
-let sonuc = "";
+    const minFiyat = minFiyatDegeri === "" ? 0 : Number(minFiyatDegeri);
+    const maxFiyat = maxFiyatDegeri === "" ? Infinity : Number(maxFiyatDegeri);
+    const minYorum = minYorumDegeri === "" ? 0 : Number(minYorumDegeri);
 
+    const filtrelenenUrunler = urunler.filter(function(urun) {
+        const kategoriUygun =
+            kategori === "tumu" || urun.kategori === kategori;
 
-urunler.forEach(function(urun){
+        const fiyatUygun =
+            urun.fiyat >= minFiyat && urun.fiyat <= maxFiyat;
 
-sonuc += `
+        const yorumUygun =
+            urun.yorum >= minYorum;
 
-<div class="product">
+        const markaUygun =
+            marka === "" ||
+            urun.marka.toLocaleLowerCase("tr-TR").includes(marka);
 
-<h3>📦 ${urun.ad}</h3>
+        return kategoriUygun && fiyatUygun && yorumUygun && markaUygun;
+    });
 
-<span class="tag">
-⭐ ${urun.puan} Puan
-</span>
-
-
-<span class="tag">
-💬 ${urun.yorum} Yorum
-</span>
-
-
-<p>
-💰 Fiyat: ${urun.fiyat}
-</p>
-
-
-<a class="amazon"
-href="${urun.link}"
-target="_blank">
-
-Amazon'da Aç
-
-</a>
-
-
-</div>
-
-`;
-
-});
-
-
-document.querySelector(".container").innerHTML += sonuc;
-
-
+    urunleriGoster(filtrelenenUrunler);
 }
 
-</script>
-</body>
+function urunleriGoster(liste) {
+    const sonucAlani = document.getElementById("sonuclar");
 
+    if (liste.length === 0) {
+        sonucAlani.innerHTML = `
+            <div class="uyari">
+                <h3>Ürün bulunamadı 😕</h3>
+                <p>Filtreleri biraz genişletip yeniden deneyebilirsin.</p>
+            </div>
+        `;
+        return;
+    }
+
+    let html = `
+        <div class="sonuc-bilgisi">
+            ${liste.length} ürün bulundu.
+        </div>
+    `;
+
+    liste.forEach(function(urun) {
+        html += `
+            <div class="product">
+                <h3>📦 ${urun.ad}</h3>
+
+                <span class="tag">🏷️ ${urun.marka}</span>
+                <span class="tag">📁 ${urun.kategori}</span>
+                <span class="tag">⭐ ${urun.puan} Puan</span>
+                <span class="tag">💬 ${urun.yorum} Yorum</span>
+
+                <p><strong>💰 ${urun.fiyat.toLocaleString("tr-TR")} TL</strong></p>
+
+                <a
+                    class="amazon"
+                    href="${urun.link}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Amazon'da Ara
+                </a>
+            </div>
+        `;
+    });
+
+    sonucAlani.innerHTML = html;
+}
+</script>
+
+</body>
 </html>
