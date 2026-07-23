@@ -2,7 +2,11 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>RadarPazar | Akıllı Ürün Araştırma Platformu</title>
 
@@ -14,10 +18,8 @@
   <style>
     :root {
       --primary: #2563eb;
-      --primary-dark: #1d4ed8;
       --secondary: #7c3aed;
       --dark: #0f172a;
-      --dark-soft: #1e293b;
       --text: #172033;
       --muted: #64748b;
       --border: #e2e8f0;
@@ -36,6 +38,7 @@
 
     body {
       margin: 0;
+
       font-family:
         Inter,
         -apple-system,
@@ -60,10 +63,6 @@
     input,
     select {
       font: inherit;
-    }
-
-    a {
-      color: inherit;
     }
 
     .hero {
@@ -125,6 +124,7 @@
       display: flex;
       align-items: center;
       gap: 12px;
+
       font-weight: 800;
       font-size: 23px;
       letter-spacing: -0.5px;
@@ -147,23 +147,24 @@
         );
 
       border: 1px solid rgba(255, 255, 255, 0.20);
-      backdrop-filter: blur(10px);
       font-size: 23px;
     }
 
     .nav-badge {
       border: 1px solid rgba(255, 255, 255, 0.22);
       background: rgba(255, 255, 255, 0.09);
+
       padding: 9px 14px;
       border-radius: 999px;
+
       font-size: 13px;
       color: #e2e8f0;
-      backdrop-filter: blur(10px);
     }
 
     .hero-content {
       width: min(900px, 92%);
       margin: 64px auto 0;
+
       text-align: center;
       position: relative;
       z-index: 2;
@@ -187,18 +188,20 @@
 
     .hero h1 {
       margin: 0;
+
       font-size: clamp(38px, 7vw, 68px);
       line-height: 1.03;
       letter-spacing: -2px;
     }
 
     .hero h1 span {
-      background: linear-gradient(
-        90deg,
-        #93c5fd,
-        #c4b5fd,
-        #f0abfc
-      );
+      background:
+        linear-gradient(
+          90deg,
+          #93c5fd,
+          #c4b5fd,
+          #f0abfc
+        );
 
       -webkit-background-clip: text;
       background-clip: text;
@@ -208,6 +211,7 @@
     .hero p {
       max-width: 700px;
       margin: 22px auto 0;
+
       color: #cbd5e1;
       font-size: 18px;
       line-height: 1.7;
@@ -216,20 +220,21 @@
     .page {
       width: min(1120px, 92%);
       margin: -72px auto 0;
+
       position: relative;
       z-index: 3;
     }
 
     .search-card {
-      background: rgba(255, 255, 255, 0.96);
+      background: rgba(255, 255, 255, 0.97);
       border: 1px solid rgba(255, 255, 255, 0.75);
+
       border-radius: 26px;
       padding: 30px;
+
       box-shadow:
         0 24px 70px rgba(15, 23, 42, 0.18),
         0 5px 20px rgba(15, 23, 42, 0.07);
-
-      backdrop-filter: blur(18px);
     }
 
     .section-heading {
@@ -237,6 +242,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 18px;
+
       margin-bottom: 24px;
     }
 
@@ -272,9 +278,12 @@
     .live-dot {
       width: 8px;
       height: 8px;
+
       border-radius: 50%;
       background: var(--success);
-      box-shadow: 0 0 0 5px rgba(22, 163, 74, 0.11);
+
+      box-shadow:
+        0 0 0 5px rgba(22, 163, 74, 0.11);
     }
 
     .form-grid {
@@ -286,6 +295,7 @@
     .field label {
       display: block;
       margin-bottom: 8px;
+
       font-weight: 700;
       font-size: 14px;
       color: #334155;
@@ -299,6 +309,7 @@
       position: absolute;
       left: 14px;
       top: 50%;
+
       transform: translateY(-50%);
       opacity: 0.60;
       pointer-events: none;
@@ -318,6 +329,7 @@
       color: var(--text);
 
       outline: none;
+
       transition:
         border-color 0.2s,
         box-shadow 0.2s,
@@ -332,7 +344,9 @@
     select:focus {
       background: white;
       border-color: #60a5fa;
-      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.10);
+
+      box-shadow:
+        0 0 0 4px rgba(37, 99, 235, 0.10);
     }
 
     .search-button {
@@ -367,18 +381,17 @@
 
     .search-button:hover {
       transform: translateY(-2px);
+
       box-shadow:
         0 16px 34px rgba(37, 99, 235, 0.35);
-      filter: brightness(1.04);
-    }
 
-    .search-button:active {
-      transform: translateY(0);
+      filter: brightness(1.04);
     }
 
     .marketplaces-area {
       margin-top: 24px;
       padding-top: 20px;
+
       border-top: 1px solid var(--border);
     }
 
@@ -386,6 +399,7 @@
       color: var(--muted);
       font-size: 13px;
       font-weight: 700;
+
       margin-bottom: 12px;
     }
 
@@ -422,15 +436,30 @@
       background: #eff6ff;
     }
 
+    .market-logo,
+    .market-mini-logo {
+      display: grid;
+      place-items: center;
+
+      color: white;
+      font-weight: 900;
+    }
+
     .market-logo {
       width: 24px;
       height: 24px;
-      display: grid;
-      place-items: center;
+
       border-radius: 7px;
-      color: white;
       font-size: 12px;
-      font-weight: 900;
+    }
+
+    .market-mini-logo {
+      width: 36px;
+      height: 36px;
+
+      border-radius: 10px;
+      font-size: 12px;
+      flex-shrink: 0;
     }
 
     .logo-amazon {
@@ -458,7 +487,8 @@
     }
 
     #sonuclar {
-      margin-top: 32px;
+      margin-top: 34px;
+      scroll-margin-top: 20px;
     }
 
     .result-header {
@@ -466,11 +496,13 @@
       justify-content: space-between;
       align-items: end;
       gap: 15px;
+
       margin-bottom: 15px;
     }
 
     .result-header h2 {
       margin: 0;
+
       font-size: 25px;
       letter-spacing: -0.6px;
     }
@@ -480,106 +512,175 @@
       font-size: 13px;
     }
 
-    .product-card {
-      background: var(--surface);
-      border: 1px solid rgba(226, 232, 240, 0.9);
-      border-radius: 22px;
+    .comparison-card {
+      background: white;
+      border: 1px solid #e2e8f0;
 
-      padding: 25px;
+      border-radius: 24px;
+      padding: 26px;
 
       box-shadow:
-        0 15px 38px rgba(15, 23, 42, 0.07);
-
-      transition:
-        transform 0.2s,
-        box-shadow 0.2s;
+        0 18px 45px rgba(15, 23, 42, 0.08);
     }
 
-    .product-card:hover {
-      transform: translateY(-3px);
-      box-shadow:
-        0 20px 45px rgba(15, 23, 42, 0.11);
-    }
-
-    .product-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      align-items: flex-start;
-      margin-bottom: 22px;
-    }
-
-    .product-label {
-      display: inline-block;
-      margin-bottom: 9px;
-
-      background: #eff6ff;
-      color: #1d4ed8;
-
-      border: 1px solid #dbeafe;
-      border-radius: 999px;
-
-      padding: 6px 10px;
-
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.4px;
-      text-transform: uppercase;
-    }
-
-    .product-card h3 {
-      margin: 0;
-      font-size: 23px;
-      letter-spacing: -0.4px;
-      word-break: break-word;
-    }
-
-    .product-info {
-      margin-top: 9px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .radar-icon {
-      min-width: 58px;
-      height: 58px;
-
+    .comparison-layout {
       display: grid;
-      place-items: center;
+      grid-template-columns: 190px 1fr;
+      gap: 26px;
 
-      border-radius: 17px;
+      align-items: start;
+    }
+
+    .product-visual {
+      min-height: 190px;
+
+      border-radius: 20px;
 
       background:
         linear-gradient(
-          135deg,
-          #dbeafe,
+          145deg,
+          #eff6ff,
           #ede9fe
         );
 
-      font-size: 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid #dbeafe;
+
+      text-align: center;
+      padding: 20px;
     }
 
-    .market-buttons {
+    .product-visual-icon {
+      font-size: 58px;
+      margin-bottom: 10px;
+    }
+
+    .product-visual span {
+      color: #64748b;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .demo-label {
+      display: inline-flex;
+
+      padding: 6px 10px;
+      border-radius: 999px;
+
+      background: #fff7ed;
+      color: #c2410c;
+
+      border: 1px solid #fed7aa;
+
+      font-size: 11px;
+      font-weight: 800;
+
+      margin-bottom: 10px;
+    }
+
+    .product-title {
+      margin: 0;
+
+      font-size: 25px;
+      line-height: 1.3;
+      letter-spacing: -0.5px;
+
+      word-break: break-word;
+    }
+
+    .product-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+
+      margin-top: 14px;
+    }
+
+    .meta-item {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+
+      color: #475569;
+
+      border-radius: 10px;
+      padding: 8px 11px;
+
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .comparison-title {
+      margin: 26px 0 12px;
+      font-size: 17px;
+    }
+
+    .market-table {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 11px;
+      gap: 10px;
     }
 
-    .market-button {
+    .market-row {
+      display: grid;
+
+      grid-template-columns:
+        minmax(170px, 1.2fr)
+        minmax(90px, 0.7fr)
+        minmax(110px, 0.7fr)
+        160px;
+
+      gap: 12px;
+      align-items: center;
+
+      padding: 12px;
+
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+
+      border-radius: 14px;
+    }
+
+    .market-name {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      font-weight: 800;
+    }
+
+    .market-data {
+      color: #64748b;
+      font-size: 12px;
+    }
+
+    .market-data strong {
+      display: block;
+
+      color: #172033;
+      font-size: 14px;
+
+      margin-top: 3px;
+    }
+
+    .open-market {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 8px;
 
-      min-height: 48px;
+      min-height: 42px;
+      padding: 10px;
 
-      padding: 12px 10px;
-      border-radius: 12px;
+      border-radius: 10px;
 
       text-decoration: none;
       color: white;
+
+      font-size: 13px;
       font-weight: 800;
-      font-size: 14px;
 
       transition:
         transform 0.18s,
@@ -587,10 +688,12 @@
         box-shadow 0.18s;
     }
 
-    .market-button:hover {
+    .open-market:hover {
       transform: translateY(-2px);
       filter: brightness(1.05);
-      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.16);
+
+      box-shadow:
+        0 9px 18px rgba(15, 23, 42, 0.15);
     }
 
     .amazon {
@@ -598,23 +701,48 @@
     }
 
     .trendyol {
-      background: linear-gradient(135deg, #f27a1a, #fb923c);
+      background:
+        linear-gradient(
+          135deg,
+          #f27a1a,
+          #fb923c
+        );
     }
 
     .hepsiburada {
-      background: linear-gradient(135deg, #ff6000, #ff7a1a);
+      background:
+        linear-gradient(
+          135deg,
+          #ff6000,
+          #ff7a1a
+        );
     }
 
     .n11 {
-      background: linear-gradient(135deg, #7e22ce, #a855f7);
+      background:
+        linear-gradient(
+          135deg,
+          #7e22ce,
+          #a855f7
+        );
     }
 
     .pazarama {
-      background: linear-gradient(135deg, #1167b1, #2589da);
+      background:
+        linear-gradient(
+          135deg,
+          #1167b1,
+          #2589da
+        );
     }
 
     .pttavm {
-      background: linear-gradient(135deg, #dc2626, #ef4444);
+      background:
+        linear-gradient(
+          135deg,
+          #dc2626,
+          #ef4444
+        );
     }
 
     .empty {
@@ -634,16 +762,28 @@
       margin-bottom: 10px;
     }
 
+    .empty strong {
+      display: block;
+      color: #172033;
+      font-size: 18px;
+    }
+
+    .empty p {
+      margin: 8px 0 0;
+    }
+
     .features {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
+
       margin-top: 38px;
     }
 
     .feature {
       background: rgba(255, 255, 255, 0.78);
       border: 1px solid rgba(226, 232, 240, 0.9);
+
       border-radius: 18px;
       padding: 21px;
     }
@@ -651,6 +791,7 @@
     .feature-icon {
       width: 42px;
       height: 42px;
+
       border-radius: 13px;
 
       display: grid;
@@ -658,6 +799,7 @@
 
       background: #eff6ff;
       font-size: 21px;
+
       margin-bottom: 13px;
     }
 
@@ -668,6 +810,7 @@
 
     .feature p {
       margin: 0;
+
       color: var(--muted);
       line-height: 1.6;
       font-size: 13px;
@@ -676,6 +819,7 @@
     footer {
       text-align: center;
       color: #64748b;
+
       padding: 48px 20px 30px;
       font-size: 13px;
     }
@@ -685,8 +829,20 @@
         grid-template-columns: 1fr 1fr;
       }
 
-      .market-buttons {
+      .comparison-layout {
+        grid-template-columns: 160px 1fr;
+      }
+
+      .market-row {
         grid-template-columns: 1fr 1fr;
+      }
+
+      .market-name {
+        grid-column: 1 / -1;
+      }
+
+      .open-market {
+        grid-column: 1 / -1;
       }
 
       .features {
@@ -737,169 +893,10 @@
         grid-template-columns: 1fr;
       }
 
-      .market-buttons {
-        grid-template-columns: 1fr;
-      }
-
-      .product-card {
+      .comparison-card {
         padding: 20px;
       }
 
-      .product-top {
-        flex-direction: column-reverse;
-      }
-
-      .radar-icon {
-        min-width: 48px;
-        width: 48px;
-        height: 48px;
-      }
-    }
-        .comparison-card {
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 24px;
-      padding: 26px;
-      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
-    }
-
-    .comparison-layout {
-      display: grid;
-      grid-template-columns: 190px 1fr;
-      gap: 26px;
-      align-items: start;
-    }
-
-    .product-visual {
-      min-height: 190px;
-      border-radius: 20px;
-      background: linear-gradient(145deg, #eff6ff, #ede9fe);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid #dbeafe;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .product-visual-icon {
-      font-size: 58px;
-      margin-bottom: 10px;
-    }
-
-    .product-visual span {
-      color: #64748b;
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .demo-label {
-      display: inline-flex;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: #fff7ed;
-      color: #c2410c;
-      border: 1px solid #fed7aa;
-      font-size: 11px;
-      font-weight: 800;
-      margin-bottom: 10px;
-    }
-
-    .product-title {
-      margin: 0;
-      font-size: 25px;
-      line-height: 1.3;
-      letter-spacing: -0.5px;
-    }
-
-    .product-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin-top: 14px;
-    }
-
-    .meta-item {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      color: #475569;
-      border-radius: 10px;
-      padding: 8px 11px;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .comparison-title {
-      margin: 26px 0 12px;
-      font-size: 17px;
-    }
-
-    .market-table {
-      display: grid;
-      gap: 10px;
-    }
-
-    .market-row {
-      display: grid;
-      grid-template-columns: 1.2fr 0.7fr 0.7fr 160px;
-      gap: 12px;
-      align-items: center;
-      padding: 12px;
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 14px;
-    }
-
-    .market-name {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 800;
-    }
-
-    .market-mini-logo {
-      width: 34px;
-      height: 34px;
-      border-radius: 10px;
-      display: grid;
-      place-items: center;
-      color: white;
-      font-weight: 900;
-      font-size: 12px;
-    }
-
-    .market-data {
-      color: #64748b;
-      font-size: 13px;
-    }
-
-    .market-data strong {
-      display: block;
-      color: #172033;
-      font-size: 14px;
-      margin-top: 2px;
-    }
-
-    .open-market {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 40px;
-      border-radius: 10px;
-      text-decoration: none;
-      color: white;
-      font-size: 13px;
-      font-weight: 800;
-      transition: transform 0.18s, filter 0.18s;
-    }
-
-    .open-market:hover {
-      transform: translateY(-2px);
-      filter: brightness(1.05);
-    }
-
-    @media (max-width: 780px) {
       .comparison-layout {
         grid-template-columns: 1fr;
       }
@@ -918,6 +915,10 @@
 
       .open-market {
         grid-column: 1 / -1;
+      }
+
+      .result-header {
+        align-items: flex-start;
       }
     }
   </style>
@@ -968,6 +969,7 @@
 
         <div>
           <h2>🔍 Ürün araştırması</h2>
+
           <p>
             Ürün veya marka adını yaz, pazaryerlerinde hızlıca ara.
           </p>
@@ -983,10 +985,16 @@
       <div class="form-grid">
 
         <div class="field">
-          <label for="urunAdi">Ürün veya marka</label>
+
+          <label for="urunAdi">
+            Ürün veya marka
+          </label>
 
           <div class="input-wrap">
-            <span class="input-icon">🔎</span>
+
+            <span class="input-icon">
+              🔎
+            </span>
 
             <input
               class="with-icon"
@@ -995,25 +1003,54 @@
               placeholder="Örnek: Bioderma Atoderm 500 ml"
               autocomplete="off"
             >
+
           </div>
+
         </div>
 
         <div class="field">
-          <label for="kategori">Kategori</label>
+
+          <label for="kategori">
+            Kategori
+          </label>
 
           <select id="kategori">
-            <option value="">Tüm kategoriler</option>
-            <option value="Kozmetik">Kozmetik</option>
-            <option value="Elektronik">Elektronik</option>
-            <option value="Ev ve yaşam">Ev ve yaşam</option>
-            <option value="Anne ve bebek">Anne ve bebek</option>
-            <option value="Kişisel bakım">Kişisel bakım</option>
-            <option value="Spor">Spor</option>
+            <option value="">
+              Tüm kategoriler
+            </option>
+
+            <option value="Kozmetik">
+              Kozmetik
+            </option>
+
+            <option value="Elektronik">
+              Elektronik
+            </option>
+
+            <option value="Ev ve yaşam">
+              Ev ve yaşam
+            </option>
+
+            <option value="Anne ve bebek">
+              Anne ve bebek
+            </option>
+
+            <option value="Kişisel bakım">
+              Kişisel bakım
+            </option>
+
+            <option value="Spor">
+              Spor
+            </option>
           </select>
+
         </div>
 
         <div class="field">
-          <label for="minFiyat">Minimum fiyat</label>
+
+          <label for="minFiyat">
+            Minimum fiyat
+          </label>
 
           <input
             type="number"
@@ -1021,10 +1058,14 @@
             min="0"
             placeholder="250"
           >
+
         </div>
 
         <div class="field">
-          <label for="maxFiyat">Maksimum fiyat</label>
+
+          <label for="maxFiyat">
+            Maksimum fiyat
+          </label>
 
           <input
             type="number"
@@ -1032,6 +1073,7 @@
             min="0"
             placeholder="1500"
           >
+
         </div>
 
       </div>
@@ -1053,32 +1095,44 @@
         <div class="marketplaces">
 
           <span class="market-badge">
-            <span class="market-logo logo-amazon">A</span>
+            <span class="market-logo logo-amazon">
+              A
+            </span>
             Amazon
           </span>
 
           <span class="market-badge">
-            <span class="market-logo logo-trendyol">T</span>
+            <span class="market-logo logo-trendyol">
+              T
+            </span>
             Trendyol
           </span>
 
           <span class="market-badge">
-            <span class="market-logo logo-hepsiburada">H</span>
+            <span class="market-logo logo-hepsiburada">
+              H
+            </span>
             Hepsiburada
           </span>
 
           <span class="market-badge">
-            <span class="market-logo logo-n11">N</span>
+            <span class="market-logo logo-n11">
+              N
+            </span>
             N11
           </span>
 
           <span class="market-badge">
-            <span class="market-logo logo-pazarama">P</span>
+            <span class="market-logo logo-pazarama">
+              P
+            </span>
             Pazarama
           </span>
 
           <span class="market-badge">
-            <span class="market-logo logo-pttavm">PT</span>
+            <span class="market-logo logo-pttavm">
+              PT
+            </span>
             PttAVM
           </span>
 
@@ -1093,36 +1147,54 @@
     <section class="features">
 
       <article class="feature">
-        <div class="feature-icon">⚡</div>
 
-        <h3>Hızlı araştırma</h3>
+        <div class="feature-icon">
+          ⚡
+        </div>
+
+        <h3>
+          Hızlı araştırma
+        </h3>
 
         <p>
-          Aynı ürünü farklı pazaryerlerinde tek tek yazmakla
-          uğraşmadan hızlıca arayın.
+          Aynı ürünü farklı pazaryerlerinde tek tek yazmadan
+          hızlıca araştır.
         </p>
+
       </article>
 
       <article class="feature">
-        <div class="feature-icon">🛍️</div>
 
-        <h3>Altı pazaryeri</h3>
+        <div class="feature-icon">
+          🛍️
+        </div>
+
+        <h3>
+          Altı pazaryeri
+        </h3>
 
         <p>
-          Türkiye'nin en çok kullanılan büyük pazaryerlerine
-          tek ekrandan ulaşın.
+          Türkiye'nin büyük pazaryerlerine tek bir ekrandan
+          kolayca ulaş.
         </p>
+
       </article>
 
       <article class="feature">
-        <div class="feature-icon">📊</div>
 
-        <h3>Gelişmeye hazır</h3>
+        <div class="feature-icon">
+          📊
+        </div>
+
+        <h3>
+          Gelişmeye hazır
+        </h3>
 
         <p>
           Fiyat karşılaştırma, favoriler ve kâr hesaplama
-          özellikleri için sağlam temel.
+          özellikleri için hazırlanmış altyapı.
         </p>
+
       </article>
 
     </section>
@@ -1158,36 +1230,60 @@
       };
     }
 
-      function urunAra() {
+    function urunAra() {
       const urunAdi =
-        document.getElementById("urunAdi").value.trim();
+        document
+          .getElementById("urunAdi")
+          .value
+          .trim();
 
       const kategori =
-        document.getElementById("kategori").value;
+        document
+          .getElementById("kategori")
+          .value;
 
       const minFiyat =
-        document.getElementById("minFiyat").value;
+        document
+          .getElementById("minFiyat")
+          .value;
 
       const maxFiyat =
-        document.getElementById("maxFiyat").value;
+        document
+          .getElementById("maxFiyat")
+          .value;
 
       const sonuclar =
-        document.getElementById("sonuclar");
+        document
+          .getElementById("sonuclar");
 
       if (!urunAdi) {
         sonuclar.innerHTML = `
           <div class="empty">
-            <div class="empty-icon">🔎</div>
-            <strong>Ürün adı eksik</strong>
-            <p>Aramak istediğin ürünün veya markanın adını yazmalısın.</p>
+
+            <div class="empty-icon">
+              🔎
+            </div>
+
+            <strong>
+              Ürün adı eksik
+            </strong>
+
+            <p>
+              Aramak istediğin ürünün veya markanın adını yazmalısın.
+            </p>
+
           </div>
         `;
 
-        document.getElementById("urunAdi").focus();
+        document
+          .getElementById("urunAdi")
+          .focus();
+
         return;
       }
 
-      const linkler = pazarYeriLinkleri(urunAdi);
+      const linkler =
+        pazarYeriLinkleri(urunAdi);
 
       const kategoriMetni =
         kategori || "Tüm kategoriler";
@@ -1199,11 +1295,15 @@
 
       sonuclar.innerHTML = `
         <div class="result-header">
-          <h2>Ürün karşılaştırması</h2>
+
+          <h2>
+            Ürün karşılaştırması
+          </h2>
 
           <div class="result-count">
             6 pazaryeri
           </div>
+
         </div>
 
         <article class="comparison-card">
@@ -1211,8 +1311,15 @@
           <div class="comparison-layout">
 
             <div class="product-visual">
-              <div class="product-visual-icon">📦</div>
-              <span>Ürün görseli burada gösterilecek</span>
+
+              <div class="product-visual-icon">
+                📦
+              </div>
+
+              <span>
+                Gerçek veri bağlandığında ürün görseli burada gösterilecek
+              </span>
+
             </div>
 
             <div>
@@ -1226,6 +1333,7 @@
               </h3>
 
               <div class="product-meta">
+
                 <span class="meta-item">
                   📁 ${guvenliMetin(kategoriMetni)}
                 </span>
@@ -1241,6 +1349,7 @@
                 <span class="meta-item">
                   💬 Yorum: —
                 </span>
+
               </div>
 
               <h4 class="comparison-title">
@@ -1323,11 +1432,15 @@
         <div class="market-row">
 
           <div class="market-name">
-            <span class="market-mini-logo ${logoSinifi}">
+
+            <span
+              class="market-mini-logo ${logoSinifi}"
+            >
               ${harf}
             </span>
 
             ${ad}
+
           </div>
 
           <div class="market-data">
@@ -1352,151 +1465,6 @@
         </div>
       `;
     }
-      const urunAdi =
-        document.getElementById("urunAdi").value.trim();
-
-      const kategori =
-        document.getElementById("kategori").value;
-
-      const minFiyat =
-        document.getElementById("minFiyat").value;
-
-      const maxFiyat =
-        document.getElementById("maxFiyat").value;
-
-      const sonuclar =
-        document.getElementById("sonuclar");
-
-      if (!urunAdi) {
-        sonuclar.innerHTML = `
-          <div class="empty">
-            <div class="empty-icon">🔎</div>
-            <strong>Ürün adı eksik</strong>
-            <p>
-              Aramak istediğin ürünün veya markanın adını yazmalısın.
-            </p>
-          </div>
-        `;
-
-        document.getElementById("urunAdi").focus();
-        return;
-      }
-
-      const linkler = pazarYeriLinkleri(urunAdi);
-
-      let filtreBilgisi =
-        kategori || "Tüm kategoriler";
-
-      if (minFiyat || maxFiyat) {
-        filtreBilgisi += " · ";
-
-        filtreBilgisi += minFiyat
-          ? `${minFiyat} TL`
-          : "0 TL";
-
-        filtreBilgisi += " – ";
-
-        filtreBilgisi += maxFiyat
-          ? `${maxFiyat} TL`
-          : "Üst sınır yok";
-      }
-
-      sonuclar.innerHTML = `
-        <div class="result-header">
-          <h2>Arama sonucu</h2>
-          <div class="result-count">
-            6 pazaryeri hazır
-          </div>
-        </div>
-
-        <article class="product-card">
-
-          <div class="product-top">
-
-            <div>
-              <span class="product-label">
-                Ürün araştırması
-              </span>
-
-              <h3>${guvenliMetin(urunAdi)}</h3>
-
-              <div class="product-info">
-                ${guvenliMetin(filtreBilgisi)}
-              </div>
-            </div>
-
-            <div class="radar-icon">
-              📡
-            </div>
-
-          </div>
-
-          <div class="market-buttons">
-
-            <a
-              class="market-button amazon"
-              href="${linkler.amazon}"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Amazon'da Ara ↗
-            </a>
-
-            <a
-              class="market-button trendyol"
-              href="${linkler.trendyol}"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Trendyol'da Ara ↗
-            </a>
-
-            <a
-              class="market-button hepsiburada"
-              href="${linkler.hepsiburada}"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Hepsiburada'da Ara ↗
-            </a>
-
-            <a
-              class="market-button n11"
-              href="${linkler.n11}"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              N11'de Ara ↗
-            </a>
-
-            <a
-              class="market-button pazarama"
-              href="${linkler.pazarama}"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Pazarama'da Ara ↗
-            </a>
-
-            <a
-              class="market-button pttavm"
-              href="${linkler.pttavm}"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              PttAVM'de Ara ↗
-            </a>
-
-          </div>
-
-        </article>
-      `;
-
-      sonuclar.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    }
 
     function guvenliMetin(metin) {
       return String(metin)
@@ -1509,11 +1477,14 @@
 
     document
       .getElementById("urunAdi")
-      .addEventListener("keydown", function(event) {
-        if (event.key === "Enter") {
-          urunAra();
+      .addEventListener(
+        "keydown",
+        function(event) {
+          if (event.key === "Enter") {
+            urunAra();
+          }
         }
-      });
+      );
   </script>
 
 </body>
