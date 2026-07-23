@@ -266,31 +266,78 @@ Amazon'da Aç
 
 function urunAra(){
 
-alert("Buton çalışıyor!");
+let urunler = [
 
-document.querySelector(".product").innerHTML = `
-<h3>📦 Bioderma Atoderm Creme Ultra 500 ml</h3>
+{
+ad:"Bioderma Atoderm Creme Ultra 500 ml",
+puan:"4.8",
+yorum:"1250",
+fiyat:"799 TL",
+link:"https://www.amazon.com.tr/"
+},
 
-<span class="tag">⭐ 4.8 Puan</span>
+{
+ad:"CeraVe Nemlendirici Krem",
+puan:"4.7",
+yorum:"980",
+fiyat:"650 TL",
+link:"https://www.amazon.com.tr/"
+},
 
-<span class="tag">💬 1250 Yorum</span>
+{
+ad:"Vichy Mineral 89 Serum",
+puan:"4.9",
+yorum:"560",
+fiyat:"950 TL",
+link:"https://www.amazon.com.tr/"
+}
 
-<p>💰 Fiyat: 799 TL</p>
+];
+
+
+let sonuc = "";
+
+
+urunler.forEach(function(urun){
+
+sonuc += `
+
+<div class="product">
+
+<h3>📦 ${urun.ad}</h3>
+
+<span class="tag">
+⭐ ${urun.puan} Puan
+</span>
+
+
+<span class="tag">
+💬 ${urun.yorum} Yorum
+</span>
+
 
 <p>
-🏷️ Marka: Bioderma
+💰 Fiyat: ${urun.fiyat}
 </p>
 
 
-<a class="amazon" 
-href="https://www.amazon.com.tr/" 
+<a class="amazon"
+href="${urun.link}"
 target="_blank">
 
 Amazon'da Aç
 
 </a>
 
+
+</div>
+
 `;
+
+});
+
+
+document.querySelector(".container").innerHTML += sonuc;
 
 
 }
