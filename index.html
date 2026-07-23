@@ -1,361 +1,420 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Ürün Avcısı</title>
+  <title>RadarPazar | Ürün Araştırma Platformu</title>
 
-<style>
-* {
-    box-sizing: border-box;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f2f4f7;
-    color: #1f2937;
-}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f1f5f9;
+      color: #172033;
+    }
 
-header {
-    background: #111827;
-    color: white;
-    padding: 28px 20px;
-    text-align: center;
-}
+    header {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
 
-header h1 {
-    margin: 0;
-    font-size: 32px;
-}
+    header h1 {
+      margin: 0;
+      font-size: 38px;
+    }
 
-header p {
-    margin: 10px 0 0;
-    color: #d1d5db;
-}
+    header p {
+      margin: 10px 0 0;
+      color: #cbd5e1;
+    }
 
-.container {
-    max-width: 1000px;
-    margin: 30px auto;
-    padding: 20px;
-}
+    .container {
+      width: min(1100px, 92%);
+      margin: 40px auto;
+    }
 
-.panel {
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,.08);
-}
+    .search-box {
+      background: white;
+      padding: 28px;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+    }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    gap: 15px;
-}
+    .search-box h2 {
+      margin-top: 0;
+    }
 
-label {
-    display: block;
-    margin-bottom: 7px;
-    font-weight: bold;
-}
+    .form-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 15px;
+    }
 
-input,
-select {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-    font-size: 15px;
-}
+    .field label {
+      display: block;
+      margin-bottom: 7px;
+      font-weight: bold;
+    }
 
-button {
-    width: 100%;
-    margin-top: 20px;
-    padding: 14px;
-    background: #2563eb;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 16px;
-    cursor: pointer;
-}
+    input,
+    select {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      font-size: 15px;
+    }
 
-button:hover {
-    background: #1d4ed8;
-}
+    .search-button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+      background: #2563eb;
+      color: white;
+      font-size: 17px;
+      cursor: pointer;
+    }
 
-#sonuclar {
-    margin-top: 25px;
-}
+    .search-button:hover {
+      background: #1d4ed8;
+    }
 
-.sonuc-bilgisi {
-    background: #dbeafe;
-    padding: 13px;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    font-weight: bold;
-}
+    .marketplaces {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
 
-.product {
-    margin-bottom: 18px;
-    background: white;
-    padding: 22px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,.08);
-}
+    .market-badge {
+      background: #e2e8f0;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 14px;
+    }
 
-.product h3 {
-    margin-top: 0;
-    margin-bottom: 14px;
-}
+    .results-title {
+      margin-top: 35px;
+    }
 
-.tag {
-    display: inline-block;
-    background: #e0f2fe;
-    padding: 6px 10px;
-    border-radius: 20px;
-    margin: 0 5px 7px 0;
-    font-size: 13px;
-}
+    .product-card {
+      background: white;
+      margin-top: 18px;
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .07);
+    }
 
-.amazon {
-    display: block;
-    margin-top: 15px;
-    text-align: center;
-    background: #ff9900;
-    color: #111827;
-    padding: 12px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-}
+    .product-card h3 {
+      margin-top: 0;
+      margin-bottom: 9px;
+      font-size: 21px;
+    }
 
-.amazon:hover {
-    background: #e88b00;
-}
+    .product-info {
+      color: #64748b;
+      margin-bottom: 17px;
+    }
 
-.uyari {
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,.08);
-}
-</style>
+    .market-buttons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .market-button {
+      display: block;
+      padding: 12px 8px;
+      border-radius: 9px;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: transform .15s;
+    }
+
+    .market-button:hover {
+      transform: translateY(-2px);
+    }
+
+    .amazon {
+      background: #232f3e;
+    }
+
+    .trendyol {
+      background: #f27a1a;
+    }
+
+    .hepsiburada {
+      background: #ff6000;
+    }
+
+    .n11 {
+      background: #8b2bbf;
+    }
+
+    .pazarama {
+      background: #1167b1;
+    }
+
+    .pttavm {
+      background: #e31e24;
+    }
+
+    .empty {
+      background: white;
+      margin-top: 20px;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      color: #64748b;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #64748b;
+    }
+
+    @media (max-width: 800px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .market-buttons {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      header h1 {
+        font-size: 30px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-    <h1>🕵️ Ürün Avcısı</h1>
-    <p>Amazon Türkiye ürün araştırma paneli</p>
+  <h1>📡 RadarPazar</h1>
+  <p>Tek aramayla Türkiye'nin büyük pazaryerlerini tara</p>
 </header>
 
-<div class="container">
+<main class="container">
 
-    <div class="panel">
-        <h2>🔍 Ürün Ara</h2>
+  <section class="search-box">
+    <h2>🔍 Ürün Ara</h2>
 
-        <div class="grid">
+    <div class="form-grid">
 
-            <div>
-                <label for="kategori">Kategori</label>
-                <select id="kategori">
-                    <option value="tumu">Tüm kategoriler</option>
-                    <option value="Kozmetik">Kozmetik</option>
-                    <option value="Kişisel Bakım">Kişisel Bakım</option>
-                    <option value="Elektronik">Elektronik</option>
-                    <option value="Ev Yaşam">Ev Yaşam</option>
-                </select>
-            </div>
+      <div class="field">
+        <label for="urunAdi">Ürün veya marka</label>
+        <input
+          type="text"
+          id="urunAdi"
+          placeholder="Örnek: Bioderma Atoderm 500 ml"
+        >
+      </div>
 
-            <div>
-                <label for="minFiyat">Minimum fiyat</label>
-                <input
-                    id="minFiyat"
-                    type="number"
-                    min="0"
-                    placeholder="Örnek: 250"
-                >
-            </div>
+      <div class="field">
+        <label for="kategori">Kategori</label>
+        <select id="kategori">
+          <option value="">Tüm kategoriler</option>
+          <option value="Kozmetik">Kozmetik</option>
+          <option value="Elektronik">Elektronik</option>
+          <option value="Ev ve yaşam">Ev ve yaşam</option>
+          <option value="Anne ve bebek">Anne ve bebek</option>
+        </select>
+      </div>
 
-            <div>
-                <label for="maxFiyat">Maksimum fiyat</label>
-                <input
-                    id="maxFiyat"
-                    type="number"
-                    min="0"
-                    placeholder="Örnek: 1000"
-                >
-            </div>
+      <div class="field">
+        <label for="minFiyat">Minimum fiyat</label>
+        <input type="number" id="minFiyat" placeholder="250">
+      </div>
 
-            <div>
-                <label for="minYorum">Minimum yorum</label>
-                <input
-                    id="minYorum"
-                    type="number"
-                    min="0"
-                    placeholder="Örnek: 200"
-                >
-            </div>
+      <div class="field">
+        <label for="maxFiyat">Maksimum fiyat</label>
+        <input type="number" id="maxFiyat" placeholder="1500">
+      </div>
 
-            <div>
-                <label for="marka">Marka</label>
-                <input
-                    id="marka"
-                    type="text"
-                    placeholder="Örnek: Bioderma"
-                >
-            </div>
-
-        </div>
-
-        <button type="button" onclick="urunAra()">🔎 ARA</button>
     </div>
 
-    <div id="sonuclar"></div>
+    <button class="search-button" onclick="urunAra()">
+      📡 Pazaryerlerinde Ara
+    </button>
 
-</div>
+    <div class="marketplaces">
+      <span class="market-badge">Amazon</span>
+      <span class="market-badge">Trendyol</span>
+      <span class="market-badge">Hepsiburada</span>
+      <span class="market-badge">N11</span>
+      <span class="market-badge">Pazarama</span>
+      <span class="market-badge">PttAVM</span>
+    </div>
+  </section>
+
+  <section id="sonuclar"></section>
+
+</main>
+
+<footer>
+  RadarPazar © 2026 – Akıllı ürün araştırma platformu
+</footer>
 
 <script>
-const urunler = [
-    {
-        ad: "Bioderma Atoderm Creme Ultra 500 ml",
-        kategori: "Kozmetik",
-        marka: "Bioderma",
-        puan: 4.8,
-        yorum: 1250,
-        fiyat: 799,
-        link: "https://www.amazon.com.tr/s?k=Bioderma+Atoderm+Creme+Ultra+500+ml"
-    },
-    {
-        ad: "CeraVe Nemlendirici Krem",
-        kategori: "Kozmetik",
-        marka: "CeraVe",
-        puan: 4.7,
-        yorum: 980,
-        fiyat: 650,
-        link: "https://www.amazon.com.tr/s?k=CeraVe+Nemlendirici+Krem"
-    },
-    {
-        ad: "Vichy Mineral 89 Serum",
-        kategori: "Kozmetik",
-        marka: "Vichy",
-        puan: 4.9,
-        yorum: 560,
-        fiyat: 950,
-        link: "https://www.amazon.com.tr/s?k=Vichy+Mineral+89+Serum"
-    },
-    {
-        ad: "Nivea Men Duş Jeli",
-        kategori: "Kişisel Bakım",
-        marka: "Nivea",
-        puan: 4.6,
-        yorum: 310,
-        fiyat: 220,
-        link: "https://www.amazon.com.tr/s?k=Nivea+Men+Duş+Jeli"
-    },
-    {
-        ad: "Kablosuz Bluetooth Kulaklık",
-        kategori: "Elektronik",
-        marka: "Anker",
-        puan: 4.5,
-        yorum: 2100,
-        fiyat: 1450,
-        link: "https://www.amazon.com.tr/s?k=Anker+Bluetooth+Kulaklık"
-    },
-    {
-        ad: "Mikrofiber Temizlik Bezi Seti",
-        kategori: "Ev Yaşam",
-        marka: "Vileda",
-        puan: 4.6,
-        yorum: 740,
-        fiyat: 340,
-        link: "https://www.amazon.com.tr/s?k=Vileda+Mikrofiber+Temizlik+Bezi"
-    }
-];
+  function pazarYeriLinkleri(urunAdi) {
+    const q = encodeURIComponent(urunAdi);
 
-function urunAra() {
+    return {
+      amazon: `https://www.amazon.com.tr/s?k=${q}`,
+      trendyol: `https://www.trendyol.com/sr?q=${q}`,
+      hepsiburada: `https://www.hepsiburada.com/ara?q=${q}`,
+      n11: `https://www.n11.com/arama?q=${q}`,
+
+      /*
+        Pazarama ve PttAVM'nin doğrudan arama bağlantıları
+        değişebildiği için şimdilik güvenilir Google site araması kullanıyoruz.
+      */
+      pazarama: `https://www.google.com/search?q=site%3Apazarama.com+${q}`,
+      pttavm: `https://www.google.com/search?q=site%3Apttavm.com+${q}`
+    };
+  }
+
+  function urunAra() {
+    const urunAdi = document.getElementById("urunAdi").value.trim();
     const kategori = document.getElementById("kategori").value;
-    const minFiyatDegeri = document.getElementById("minFiyat").value;
-    const maxFiyatDegeri = document.getElementById("maxFiyat").value;
-    const minYorumDegeri = document.getElementById("minYorum").value;
-    const marka = document
-        .getElementById("marka")
-        .value
-        .trim()
-        .toLocaleLowerCase("tr-TR");
+    const minFiyat = document.getElementById("minFiyat").value;
+    const maxFiyat = document.getElementById("maxFiyat").value;
+    const sonuclar = document.getElementById("sonuclar");
 
-    const minFiyat = minFiyatDegeri === "" ? 0 : Number(minFiyatDegeri);
-    const maxFiyat = maxFiyatDegeri === "" ? Infinity : Number(maxFiyatDegeri);
-    const minYorum = minYorumDegeri === "" ? 0 : Number(minYorumDegeri);
+    if (!urunAdi) {
+      sonuclar.innerHTML = `
+        <div class="empty">
+          Önce aramak istediğin ürünün veya markanın adını yazmalısın.
+        </div>
+      `;
 
-    const filtrelenenUrunler = urunler.filter(function(urun) {
-        const kategoriUygun =
-            kategori === "tumu" || urun.kategori === kategori;
-
-        const fiyatUygun =
-            urun.fiyat >= minFiyat && urun.fiyat <= maxFiyat;
-
-        const yorumUygun =
-            urun.yorum >= minYorum;
-
-        const markaUygun =
-            marka === "" ||
-            urun.marka.toLocaleLowerCase("tr-TR").includes(marka);
-
-        return kategoriUygun && fiyatUygun && yorumUygun && markaUygun;
-    });
-
-    urunleriGoster(filtrelenenUrunler);
-}
-
-function urunleriGoster(liste) {
-    const sonucAlani = document.getElementById("sonuclar");
-
-    if (liste.length === 0) {
-        sonucAlani.innerHTML = `
-            <div class="uyari">
-                <h3>Ürün bulunamadı 😕</h3>
-                <p>Filtreleri biraz genişletip yeniden deneyebilirsin.</p>
-            </div>
-        `;
-        return;
+      document.getElementById("urunAdi").focus();
+      return;
     }
 
-    let html = `
-        <div class="sonuc-bilgisi">
-            ${liste.length} ürün bulundu.
+    const linkler = pazarYeriLinkleri(urunAdi);
+
+    let filtreBilgisi = kategori || "Tüm kategoriler";
+
+    if (minFiyat || maxFiyat) {
+      filtreBilgisi += " • ";
+
+      if (minFiyat) {
+        filtreBilgisi += `${minFiyat} TL`;
+      } else {
+        filtreBilgisi += "0 TL";
+      }
+
+      filtreBilgisi += " – ";
+
+      if (maxFiyat) {
+        filtreBilgisi += `${maxFiyat} TL`;
+      } else {
+        filtreBilgisi += "Üst sınır yok";
+      }
+    }
+
+    sonuclar.innerHTML = `
+      <h2 class="results-title">Arama sonucu</h2>
+
+      <article class="product-card">
+        <h3>${guvenliMetin(urunAdi)}</h3>
+
+        <div class="product-info">
+          ${guvenliMetin(filtreBilgisi)}
         </div>
+
+        <div class="market-buttons">
+
+          <a
+            class="market-button amazon"
+            href="${linkler.amazon}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Amazon'da Ara
+          </a>
+
+          <a
+            class="market-button trendyol"
+            href="${linkler.trendyol}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Trendyol'da Ara
+          </a>
+
+          <a
+            class="market-button hepsiburada"
+            href="${linkler.hepsiburada}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Hepsiburada'da Ara
+          </a>
+
+          <a
+            class="market-button n11"
+            href="${linkler.n11}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            N11'de Ara
+          </a>
+
+          <a
+            class="market-button pazarama"
+            href="${linkler.pazarama}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Pazarama'da Ara
+          </a>
+
+          <a
+            class="market-button pttavm"
+            href="${linkler.pttavm}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            PttAVM'de Ara
+          </a>
+
+        </div>
+      </article>
     `;
+  }
 
-    liste.forEach(function(urun) {
-        html += `
-            <div class="product">
-                <h3>📦 ${urun.ad}</h3>
+  function guvenliMetin(metin) {
+    return metin
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
 
-                <span class="tag">🏷️ ${urun.marka}</span>
-                <span class="tag">📁 ${urun.kategori}</span>
-                <span class="tag">⭐ ${urun.puan} Puan</span>
-                <span class="tag">💬 ${urun.yorum} Yorum</span>
-
-                <p><strong>💰 ${urun.fiyat.toLocaleString("tr-TR")} TL</strong></p>
-
-                <a
-                    class="amazon"
-                    href="${urun.link}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Amazon'da Ara
-                </a>
-            </div>
-        `;
+  document
+    .getElementById("urunAdi")
+    .addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        urunAra();
+      }
     });
-
-    sonucAlani.innerHTML = html;
-}
 </script>
 
 </body>
